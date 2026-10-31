@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: tp8-postgres
+    environment:
+      POSTGRES_USER: tp8
+      POSTGRES_PASSWORD: tp8_local
+      POSTGRES_DB: tp8
+    ports:
+      - "5434:5432"
+    volumes:
+      - tp8_postgres_data:/var/lib/postgresql
+
+volumes:
+  tp8_postgres_data:
